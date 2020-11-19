@@ -30,7 +30,7 @@ def get(zone):
     wait = WebDriverWait(driver, 10) 
     menu_bt = wait.until(EC.element_to_be_clickable( (By.XPATH, '//div[@class="hdtb-mitem hdtb-imb"]//a')) )
     menu_bt.click()
-    name=driver.find_elements_by_xpath('//div[@class="section-result-title-container"]//h3[@class="section-result-title"]//span[1]')  
+    name=driver.find_elements_by_xpath('//h3[@class="section-result-title"]//span')  
     address=driver.find_elements_by_xpath('//div[@class="section-result-details-container"]//span[@class="section-result-location"]')
     phone=driver.find_elements_by_xpath('//div[@class="section-result-hours-phone-container"]//span[@class="section-result-info section-result-phone-number"]//span[1]')
     userstar=driver.find_elements_by_xpath('//div[@class="section-result-text-content"]//span[@class="cards-rating-score"]')
@@ -40,6 +40,7 @@ def get(zone):
         print(e.text)
         addresses.append(e.text)    
     for f in name:
+        print("name")
         print(f.text)
         names.append(f.text)
     for g in phone:
