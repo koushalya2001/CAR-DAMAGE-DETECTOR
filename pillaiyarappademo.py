@@ -9,6 +9,12 @@ import json
 import os
 import time
 def getReviewstwo(zone):
+   
+    return shops
+app = Flask(__name__)
+@app.route("/damagedetails/<string:zone>")
+def get(zone):
+    assert zone==request.view_args['zone']
     options = Options()
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
@@ -24,14 +30,12 @@ def getReviewstwo(zone):
     wait = WebDriverWait(driver, 10) 
     menu_bt = wait.until(EC.element_to_be_clickable( (By.XPATH, '//div[@class="hdtb-mitem hdtb-imb"]//a')) )
     menu_bt.click()
-    recent_rating_bt = driver.find_elements_by_xpath('//div[@class="section-result-text-content"]')
-    nametrial=[]
     name=driver.find_elements_by_xpath('//div[@class="section-result-text-content"]//h3[@class="section-result-title"]//span')
     address=driver.find_elements_by_xpath('//div[@class="section-result-text-content"]//span[@class="section-result-location"]')
     phone=driver.find_elements_by_xpath('//div[@class="section-result-text-content"]//span[@class="section-result-info section-result-phone-number"]//span')
     userstar=driver.find_elements_by_xpath('//div[@class="section-result-text-content"]//span[@class="cards-rating-score"]')
     openstatus=driver.find_elements_by_xpath('//div[@class="section-result-hours-phone-container"]//span[@class="section-result-info section-result-closed" and not(contains(@style, "display:none"))]//span[1] | //div[@class="section-result-hours-phone-container"]//span[@class="section-result-info section-result-opening-hours" and not(contains(@style, "display:none"))]//span[1]')
-    time.sleep(3)
+    #time.sleep(3)
     for e in address:
         addresses.append(e.text)    
     for f in name:
@@ -47,6 +51,11 @@ def getReviewstwo(zone):
            openstatuses.append(q.text)
     for r in userstar :
         userstars.append(r.text) 
+    print(phones)
+    print(names)
+    print(addresses)
+    print(openstatuses)
+    print(userstars)   
     score_titles = [{"name": t, "address": s,"phone":u,"rating":v,"status":w} for t, s, u, v, w in zip(names,addresses,phones,userstars,openstatuses)] 
     shops=json.dumps(score_titles)
     print(phones)
@@ -69,14 +78,8 @@ def getReviewstwo(zone):
     address.clear()
     '''
     driver.quit()
-    return shops
-app = Flask(__name__)
-@app.route("/damagedetails/<string:zone>")
-def get(zone):
-    assert zone==request.view_args['zone']
-    review=getReviewstwo(zone)
     print(review)
-    return jsonify({"area":review})
+    return jsonify({"area":score_titles})
 
 
 if __name__== "__main__":
