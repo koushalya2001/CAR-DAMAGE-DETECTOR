@@ -49,6 +49,7 @@ def getReviewstwo(zone):
         userstars.append(r.text) 
     score_titles = [{"name": t, "address": s,"phone":u,"rating":v,"status":w} for t, s, u, v, w in zip(names,addresses,phones,userstars,openstatuses)] 
     shops=json.dumps(score_titles)
+    print(shops)
     userstars.clear()
     openstatuses.clear()
     phones.clear()
@@ -66,6 +67,7 @@ app = Flask(__name__)
 def get(zone):
     assert zone==request.view_args['zone']
     review=getReviewstwo(zone)
+    print(review)
     return jsonify({"area":review})
 
 
