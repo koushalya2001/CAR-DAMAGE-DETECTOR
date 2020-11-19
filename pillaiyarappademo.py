@@ -32,12 +32,12 @@ def getReviewstwo(zone):
     userstar=driver.find_elements_by_xpath('//div[@class="section-result-text-content"]//span[@class="cards-rating-score"]')
     openstatus=driver.find_elements_by_xpath('//div[@class="section-result-hours-phone-container"]//span[@class="section-result-info section-result-closed" and not(contains(@style, "display:none"))]//span[1] | //div[@class="section-result-hours-phone-container"]//span[@class="section-result-info section-result-opening-hours" and not(contains(@style, "display:none"))]//span[1]')
     time.sleep(3)
-    for f, b in zip(name, address):
+    for e in address:
+        addresses.append(e.text)    
+    for f in name:
         names.append(f.text)
-        addresses.append(b.text)
-    
-    for p in phone:
-        phones.append(p.text)
+    for g in phone:
+        phones.append(g.text)
     for q in openstatus:
         if q.text==".":
         	openstatuses.append(" ")  
@@ -49,7 +49,14 @@ def getReviewstwo(zone):
         userstars.append(r.text) 
     score_titles = [{"name": t, "address": s,"phone":u,"rating":v,"status":w} for t, s, u, v, w in zip(names,addresses,phones,userstars,openstatuses)] 
     shops=json.dumps(score_titles)
+    print(phones)
+    print(names)
+    print(addresses)
+    print(openstatuses)
+    print(userstars)
     print(shops)
+    print(score_titles)
+    '''
     userstars.clear()
     openstatuses.clear()
     phones.clear()
@@ -60,6 +67,7 @@ def getReviewstwo(zone):
     phone.clear()
     name.clear()
     address.clear()
+    '''
     driver.quit()
     return shops
 app = Flask(__name__)
