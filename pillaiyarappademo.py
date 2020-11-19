@@ -1,5 +1,4 @@
-from flask import Flask,jsonify
-from flask_restful import Api,Resource,reqparse
+from flask import Flask,jsonify,request
 import selenium
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
