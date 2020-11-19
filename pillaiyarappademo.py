@@ -1,4 +1,5 @@
 from flask import Flask,jsonify,request
+from bs4 import BeautifulSoup
 import selenium
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
