@@ -78,7 +78,6 @@ def get(zone):
     address.clear()
     '''
     driver.quit()
-    print(review)
     return jsonify({"area":score_titles})
 
 
