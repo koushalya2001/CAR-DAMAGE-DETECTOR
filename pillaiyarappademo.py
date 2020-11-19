@@ -30,12 +30,14 @@ def get(zone):
     wait = WebDriverWait(driver, 10) 
     menu_bt = wait.until(EC.element_to_be_clickable( (By.XPATH, '//div[@class="hdtb-mitem hdtb-imb"]//a')) )
     menu_bt.click()
+    response = BeautifulSoup(driver.page_source, 'html.parser')
+    rlist = response.find_all('div', class_='section-result-content')
+    print(rlist)
     name=driver.find_elements_by_xpath('//h3[@class="section-result-title"]//span')  
     address=driver.find_elements_by_xpath('//div[@class="section-result-details-container"]//span[@class="section-result-location"]')
     phone=driver.find_elements_by_xpath('//div[@class="section-result-hours-phone-container"]//span[@class="section-result-info section-result-phone-number"]//span[1]')
     userstar=driver.find_elements_by_xpath('//div[@class="section-result-text-content"]//span[@class="cards-rating-score"]')
     openstatus=driver.find_elements_by_xpath('//div[@class="section-result-hours-phone-container"]//span[@class="section-result-info section-result-closed" and not(contains(@style, "display:none"))]//span[1] | //div[@class="section-result-hours-phone-container"]//span[@class="section-result-info section-result-opening-hours" and not(contains(@style, "display:none"))]//span[1]')
-    #time.sleep(3)
     for e in address:
         print(e.text)
         addresses.append(e.text)    
@@ -49,10 +51,8 @@ def get(zone):
     for q in openstatus:
         if q.text==".":
         	openstatuses.append(" ")  
-        	print(q.text)
-        else:
-           print(q.text)    
-           openstatuses.append(q.text)
+        else:   
+         openstatuses.append(q.text)
     for r in userstar :
         userstars.append(r.text) 
     print(phones)
