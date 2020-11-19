@@ -22,10 +22,8 @@ def getReviewstwo(zone):
     url =f"https://www.google.com/search?q={search}"
     names,addresses,phones,userstars,openstatuses=[],[],[],[],[]
     driver.get(url)
-    print(repr(driver.find_element_by_tag_name('body').text))
     wait = WebDriverWait(driver, 10) 
     menu_bt = wait.until(EC.element_to_be_clickable( (By.XPATH, '//div[@class="hdtb-mitem hdtb-imb"]//a')) )
-    print(repr(driver.find_element_by_tag_name('body').text))
     menu_bt.click()
     recent_rating_bt = driver.find_elements_by_xpath('//div[@class="section-result-text-content"]')
     nametrial=[]
@@ -65,13 +63,11 @@ def getReviewstwo(zone):
     driver.quit()
     return shops
 app = Flask(__name__)
-api=Api(app)
-class GetLocation(Resource):
-   def get(self,zone):
-    		review=getReviewstwo(zone)
-    		return jsonify({"area":review})
-
-api.add_resource(GetLocation,"/damagedetails/<string:zone>")
+@app.route("/damagedetails/<string:zone>")
+def get(zone):
+    assert zone==request.view_args['zone']
+    review=getReviewstwo(zone)
+    return jsonify({"area":review})
 
 
 if __name__== "__main__":
