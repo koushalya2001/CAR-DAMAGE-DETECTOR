@@ -26,13 +26,13 @@ Install python
 > pip install python
 
 Install jdk
-> [jdkinstallationsteps]("https://www.jackrutorial.com/2018/10/how-to-install-java-jdk-11-on-windows-10.html#:~:text=In%20this%20tutorial%2C%20we%20show%20you%20how%20to,and%20click%20the%20download%20link%20%22%20jdk-11.0.1_windows-x64_bin.exe%20%22.")
+> [jdkinstallationsteps](https://www.jackrutorial.com/2018/10/how-to-install-java-jdk-11-on-windows-10.html#:~:text=In%20this%20tutorial%2C%20we%20show%20you%20how%20to,and%20click%20the%20download%20link%20%22%20jdk-11.0.1_windows-x64_bin.exe%20%22.,"jdkinstallationsteps")
 
 >Install Android Studio
-[AndroidStudio]("https://developer.android.com/studio/install#:~:text=%20To%20install%20Android%20Studio%20on%20Windows%2C%20proceed,SDK%20packages%20that%20it%20recommends.%20Learn%20more%20on...developer.android.com")
+[AndroidStudio](https://developer.android.com/studio/install#:~:text=%20To%20install%20Android%20Studio%20on%20Windows%2C%20proceed,SDK%20packages%20that%20it%20recommends.%20Learn%20more%20on...developer.android.com,"AndroidStudio")
 
 >Install emulator
-[emulator]("https://docs.expo.io/workflow/android-studio-emulator/")
+[emulator](https://docs.expo.io/workflow/android-studio-emulator/,"emulator")
 
 Download the cardamagedetector folder and make it as a project in android studio and run
 
