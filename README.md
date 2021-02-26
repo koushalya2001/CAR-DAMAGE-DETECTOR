@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # reviewfinder
 reviewfinder
 README.MD
@@ -5,6 +6,15 @@ README.MD
 # AUTOTMATIC CAR DAMAGE DETECTOR#
 
 ## THE ANDROID APPLICATION  DETECT DAMAGES IN INPUT IMAGE,PREDICTS THE ESTIMATED COST TO REPAIR THE DAMAGE AND SHOWS NEARBY MECHANIC SHOPS SORTED IN DESCENDING ORDER OF RATING##
+=======
+# CAR DAMAGE DETECTOR
+CAR DAMAGE DETECTOR
+README.MD
+
+# AUTOTMATIC CAR DAMAGE DETECTOR
+
+## THE ANDROID APPLICATION  DETECT DAMAGES IN INPUT IMAGE,PREDICTS THE ESTIMATED COST TO REPAIR THE DAMAGE AND SHOWS NEARBY MECHANIC SHOPS SORTED IN DESCENDING ORDER OF RATING
+>>>>>>> 1576abf33a12e91dd857f6d3130b9047768c0b5f
 **Hardware Requirements**
 > OS- Windows/Ubuntu/Mac
 > RAM-4GB(to support emulation by android emulator)
@@ -49,5 +59,8 @@ download web-scraping folder
 cd into the folder
 enter python mechanicshopscraper.py(to analyse and start the flask server that does web scraping )
 &copy;
+<<<<<<< HEAD
 NaveenaMadhumithaKoushalya.corp
+=======
+>>>>>>> 1576abf33a12e91dd857f6d3130b9047768c0b5f
 
