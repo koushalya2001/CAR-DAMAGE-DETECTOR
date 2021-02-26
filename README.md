@@ -1,11 +1,13 @@
-<<<<<<< HEAD
-# reviewfinder
-reviewfinder
+
+# # AUTOTMATIC CAR DAMAGE DETECTOR
+
+# AUTOTMATIC CAR DAMAGE DETECTOR
+
 README.MD
 
-# AUTOTMATIC CAR DAMAGE DETECTOR#
+# AUTOTMATIC CAR DAMAGE DETECTOR
 
-## THE ANDROID APPLICATION  DETECT DAMAGES IN INPUT IMAGE,PREDICTS THE ESTIMATED COST TO REPAIR THE DAMAGE AND SHOWS NEARBY MECHANIC SHOPS SORTED IN DESCENDING ORDER OF RATING##
+## THE ANDROID APPLICATION  DETECT DAMAGES IN INPUT IMAGE,PREDICTS THE ESTIMATED COST TO REPAIR THE DAMAGE AND SHOWS NEARBY MECHANIC SHOPS SORTED IN DESCENDING ORDER OF RATING
 =======
 # CAR DAMAGE DETECTOR
 CAR DAMAGE DETECTOR
@@ -14,7 +16,7 @@ README.MD
 # AUTOTMATIC CAR DAMAGE DETECTOR
 
 ## THE ANDROID APPLICATION  DETECT DAMAGES IN INPUT IMAGE,PREDICTS THE ESTIMATED COST TO REPAIR THE DAMAGE AND SHOWS NEARBY MECHANIC SHOPS SORTED IN DESCENDING ORDER OF RATING
->>>>>>> 1576abf33a12e91dd857f6d3130b9047768c0b5f
+
 **Hardware Requirements**
 > OS- Windows/Ubuntu/Mac
 > RAM-4GB(to support emulation by android emulator)
@@ -44,12 +46,13 @@ Install jdk
 >Install emulator
 [emulator](https://docs.expo.io/workflow/android-studio-emulator/,"emulator")
 
-Download the cardamagedetector folder and make it as a project in android studio and run
 
 **To improvise and contribute to the above application**
 
+**To explore android code"**
+ Download the cardamage android folder and make it as a project in android studio and run
+ 
 **To explore model:-**
-
 download machine-learning folder
 cd into the folder
 enter python app.py(to analyse and start the flask server that communicates with model deployed in ibm watson)
@@ -59,8 +62,6 @@ download web-scraping folder
 cd into the folder
 enter python mechanicshopscraper.py(to analyse and start the flask server that does web scraping )
 &copy;
-<<<<<<< HEAD
-NaveenaMadhumithaKoushalya.corp
-=======
->>>>>>> 1576abf33a12e91dd857f6d3130b9047768c0b5f
+
+
 
